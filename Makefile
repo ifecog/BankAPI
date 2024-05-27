@@ -13,8 +13,6 @@ migrateup:
 migratedown:
 	migrate -path DbMigration -database "postgresql://root:Darasimi302@localhost:5433/simple_bank?sslmode=disable" -verbose down
 
-makeFileDir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-
 sqlc:
 	docker run --rm -v ${pwd}:/src -w /src kjconroy/sqlc generate
 
